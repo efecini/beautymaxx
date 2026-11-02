@@ -93,14 +93,18 @@
         justify-content: space-between;
       }
 
+      header {
+        justify-content: flex-end;
+      }
+
       .wordmark {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 1.15rem;
+        font-size: clamp(1.4rem, 2.4vw, 1.85rem);
         font-weight: 500;
         letter-spacing: 0.32em;
         text-transform: uppercase;
-        color: var(--gold);
-        text-shadow: 0 2px 18px rgba(12, 10, 8, 0.7);
+        color: #2a221c;
+        margin-bottom: 0.85rem;
       }
 
       .meta {
@@ -137,6 +141,12 @@
         top: 50%;
         transform: translateY(-50%);
         max-width: min(38rem, 46vw);
+        align-items: center;
+        text-align: center;
+      }
+
+      .intro h1 {
+        text-align: center;
       }
 
       .cta {
@@ -239,7 +249,11 @@
           );
         }
 
-        header .meta {
+        .frame {
+          grid-template-rows: 1fr auto;
+        }
+
+        header {
           display: none;
         }
 
@@ -259,11 +273,11 @@
     <div class="atmosphere" role="img" aria-label="Beauty editorial portrait with smoky eye makeup"></div>
     <div class="frame">
       <header>
-        <div class="wordmark">BeautyMaxx</div>
         <div class="meta">Est. 2026</div>
       </header>
       <main>
         <div class="intro">
+          <div class="wordmark">BeautyMaxx</div>
           <h1>Beauty, taken <em>further.</em></h1>
         </div>
         <div class="cta">
