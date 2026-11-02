@@ -257,18 +257,33 @@
         }
 
         .intro {
-          left: 50%;
-          top: 1.75rem;
-          transform: translateX(-50%);
-          max-width: min(22rem, 88vw);
+          inset: 0;
+          left: 0;
+          top: 0;
+          transform: none;
+          max-width: none;
+          width: 100%;
         }
 
         .intro .wordmark {
+          position: absolute;
+          top: 1.75rem;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 0;
           font-family: Outfit, system-ui, sans-serif;
           font-weight: 400;
           letter-spacing: 0.22em;
           color: var(--muted);
           text-shadow: 0 2px 14px rgba(12, 10, 8, 0.8);
+        }
+
+        .intro h1 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: none;
         }
 
         .intro h1,
