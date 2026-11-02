@@ -51,7 +51,7 @@
         position: fixed;
         inset: 0;
         pointer-events: none;
-        background: var(--bg-deep) url("assets/hero.jpg") 72% 28% / cover no-repeat;
+        background: var(--bg-deep) url("assets/hero.jpg") 52% 36% / cover no-repeat;
       }
 
       .atmosphere::before,
@@ -63,19 +63,18 @@
 
       .atmosphere::before {
         background: linear-gradient(
-          90deg,
-          rgba(12, 10, 8, 0.88) 0%,
-          rgba(12, 10, 8, 0.64) 30%,
-          rgba(12, 10, 8, 0.34) 54%,
-          rgba(12, 10, 8, 0.14) 100%
+          180deg,
+          rgba(12, 10, 8, 0.78) 0%,
+          rgba(12, 10, 8, 0.5) 14%,
+          rgba(12, 10, 8, 0.12) 36%,
+          rgba(12, 10, 8, 0.05) 52%,
+          rgba(12, 10, 8, 0.28) 78%,
+          rgba(12, 10, 8, 0.82) 100%
         );
       }
 
       .atmosphere::after {
-        background:
-          linear-gradient(180deg, rgba(12, 10, 8, 0.62) 0%, transparent 22%, transparent 76%, rgba(12, 10, 8, 0.78) 100%),
-          radial-gradient(ellipse 70% 80% at 18% 48%, rgba(12, 10, 8, 0.45), transparent 62%);
-        opacity: 0.95;
+        display: none;
       }
 
       .frame {
@@ -117,12 +116,26 @@
       main {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        text-align: left;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 1.15rem 0 0.5rem;
+        min-height: 0;
+      }
+
+      .intro,
+      .cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .intro {
         max-width: 38rem;
-        padding: 3rem 1.5rem 3rem 0;
-        background: radial-gradient(ellipse 90% 75% at 12% 48%, rgba(12, 10, 8, 0.5), transparent 72%);
+      }
+
+      .cta {
+        max-width: 32rem;
       }
 
       .eyebrow {
@@ -130,14 +143,14 @@
         letter-spacing: 0.42em;
         text-transform: uppercase;
         color: var(--gold-deep);
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.85rem;
         text-shadow: 0 2px 16px rgba(12, 10, 8, 0.8);
       }
 
       h1 {
         font-family: "Cormorant Garamond", Georgia, serif;
         font-weight: 500;
-        font-size: clamp(3rem, 8vw, 6.4rem);
+        font-size: clamp(2.6rem, 6vw, 4.8rem);
         line-height: 0.92;
         letter-spacing: -0.02em;
         max-width: 12ch;
@@ -155,7 +168,7 @@
         width: 3.5rem;
         height: 1px;
         background: var(--gold-deep);
-        margin: 2rem 0;
+        margin: 1.25rem auto 1.1rem;
         opacity: 0.85;
       }
 
@@ -169,7 +182,7 @@
       }
 
       .status {
-        margin-top: 2.75rem;
+        margin-top: 1.35rem;
         display: inline-flex;
         align-items: center;
         gap: 0.7rem;
@@ -214,27 +227,26 @@
 
       @media (max-width: 800px) {
         .atmosphere {
-          background-position: 68% 22%;
+          background-size: cover;
+          background-position: 52% 32%;
         }
 
         .atmosphere::before {
           background: linear-gradient(
             180deg,
-            rgba(12, 10, 8, 0.72) 0%,
-            rgba(12, 10, 8, 0.46) 38%,
-            rgba(12, 10, 8, 0.62) 100%
+            rgba(12, 10, 8, 0.8) 0%,
+            rgba(12, 10, 8, 0.52) 16%,
+            rgba(12, 10, 8, 0.12) 40%,
+            rgba(12, 10, 8, 0.08) 55%,
+            rgba(12, 10, 8, 0.55) 82%,
+            rgba(12, 10, 8, 0.82) 100%
           );
         }
 
-        main {
-          align-items: center;
-          text-align: center;
+        .intro,
+        .cta {
           max-width: none;
-        }
-
-        .rule {
-          margin-left: auto;
-          margin-right: auto;
+          width: 100%;
         }
       }
 
@@ -253,14 +265,18 @@
         <div class="meta">Est. 2026</div>
       </header>
       <main>
-        <p class="eyebrow">A new standard</p>
-        <h1>Beauty, taken <em>further.</em></h1>
-        <div class="rule" aria-hidden="true"></div>
-        <p class="lede">
-          Something refined is on its way. We’re preparing a considered experience —
-          crafted with care, launching soon.
-        </p>
-        <p class="status"><span class="dot" aria-hidden="true"></span> Coming soon</p>
+        <div class="intro">
+          <p class="eyebrow">A new standard</p>
+          <h1>Beauty, taken <em>further.</em></h1>
+        </div>
+        <div class="cta">
+          <div class="rule" aria-hidden="true"></div>
+          <p class="lede">
+            Something refined is on its way. We’re preparing a considered experience —
+            crafted with care, launching soon.
+          </p>
+          <p class="status"><span class="dot" aria-hidden="true"></span> Coming soon</p>
+        </div>
       </main>
       <footer>
         <span class="meta">BeautyMaxx</span>
