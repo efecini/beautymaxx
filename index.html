@@ -116,22 +116,27 @@
       main {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-align: left;
         padding: 1.15rem 0 0.5rem;
         min-height: 0;
+        position: relative;
       }
 
       .intro,
       .cta {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
       }
 
       .intro {
-        max-width: 38rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: min(38rem, 46vw);
       }
 
       .cta {
@@ -145,14 +150,14 @@
         line-height: 0.92;
         letter-spacing: -0.02em;
         max-width: 12ch;
-        color: var(--ink);
-        text-shadow: 0 8px 36px rgba(12, 10, 8, 0.55);
+        color: #2a221c;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
       }
 
       h1 em {
         font-style: italic;
         font-weight: 400;
-        color: var(--gold);
+        color: #4a3b2e;
       }
 
       .status {
@@ -206,20 +211,13 @@
         }
 
         .atmosphere::before {
-          background:
-            linear-gradient(
-              90deg,
-              rgba(12, 10, 8, 0.22) 0%,
-              rgba(12, 10, 8, 0.08) 34%,
-              transparent 62%
-            ),
-            linear-gradient(
-              180deg,
-              rgba(12, 10, 8, 0.28) 0%,
-              transparent 22%,
-              transparent 80%,
-              rgba(12, 10, 8, 0.34) 100%
-            );
+          background: linear-gradient(
+            180deg,
+            rgba(12, 10, 8, 0.16) 0%,
+            transparent 22%,
+            transparent 80%,
+            rgba(12, 10, 8, 0.28) 100%
+          );
         }
       }
 
@@ -245,10 +243,8 @@
           display: none;
         }
 
-        .intro,
-        .cta {
-          max-width: none;
-          width: 100%;
+        .intro {
+          max-width: min(20rem, 58vw);
         }
       }
 
