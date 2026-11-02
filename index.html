@@ -263,17 +263,19 @@
           max-width: min(22rem, 88vw);
         }
 
-        .intro .wordmark,
-        .intro h1,
-        .intro h1 em {
+        .intro .wordmark {
           font-family: Outfit, system-ui, sans-serif;
           font-weight: 400;
+          letter-spacing: 0.22em;
           color: var(--muted);
           text-shadow: 0 2px 14px rgba(12, 10, 8, 0.8);
         }
 
-        .intro .wordmark {
-          letter-spacing: 0.22em;
+        .intro h1,
+        .intro h1 em {
+          color: var(--muted);
+          text-shadow: 0 2px 14px rgba(12, 10, 8, 0.8);
+          white-space: nowrap;
         }
       }
 
