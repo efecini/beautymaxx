@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#14110e" />
     <meta property="og:title" content="BeautyMaxx — Coming Soon" />
     <meta property="og:description" content="A refined new standard in beauty, coming soon." />
+    <meta property="og:image" content="https://beautymaxx.app/assets/hero.jpg" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%14110e'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='28' fill='%23e8d5b5'%3EB%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,10 +22,10 @@
         --bg: #14110e;
         --bg-deep: #0c0a08;
         --ink: #f4ece1;
-        --muted: #b8aa98;
+        --muted: #d4c6b4;
         --gold: #e8d5b5;
-        --gold-deep: #c4a574;
-        --line: rgba(232, 213, 181, 0.22);
+        --gold-deep: #e0c49a;
+        --line: rgba(232, 213, 181, 0.28);
       }
 
       * {
@@ -40,7 +41,7 @@
 
       body {
         font-family: Outfit, system-ui, sans-serif;
-        background: var(--bg);
+        background: var(--bg-deep);
         color: var(--ink);
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
@@ -50,19 +51,31 @@
         position: fixed;
         inset: 0;
         pointer-events: none;
-        background:
-          radial-gradient(ellipse 80% 50% at 50% -10%, rgba(196, 165, 116, 0.16), transparent 55%),
-          radial-gradient(ellipse 40% 40% at 80% 90%, rgba(232, 213, 181, 0.06), transparent 50%),
-          radial-gradient(ellipse 30% 30% at 10% 70%, rgba(196, 165, 116, 0.05), transparent 50%),
-          var(--bg-deep);
+        background: var(--bg-deep) url("assets/hero.jpg") 72% 28% / cover no-repeat;
       }
 
+      .atmosphere::before,
       .atmosphere::after {
         content: "";
         position: absolute;
         inset: 0;
-        opacity: 0.035;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      .atmosphere::before {
+        background: linear-gradient(
+          90deg,
+          rgba(12, 10, 8, 0.88) 0%,
+          rgba(12, 10, 8, 0.64) 30%,
+          rgba(12, 10, 8, 0.34) 54%,
+          rgba(12, 10, 8, 0.14) 100%
+        );
+      }
+
+      .atmosphere::after {
+        background:
+          linear-gradient(180deg, rgba(12, 10, 8, 0.62) 0%, transparent 22%, transparent 76%, rgba(12, 10, 8, 0.78) 100%),
+          radial-gradient(ellipse 70% 80% at 18% 48%, rgba(12, 10, 8, 0.45), transparent 62%);
+        opacity: 0.95;
       }
 
       .frame {
@@ -88,6 +101,7 @@
         letter-spacing: 0.32em;
         text-transform: uppercase;
         color: var(--gold);
+        text-shadow: 0 2px 18px rgba(12, 10, 8, 0.7);
       }
 
       .meta {
@@ -97,15 +111,18 @@
         color: var(--muted);
         font-weight: 400;
         white-space: nowrap;
+        text-shadow: 0 2px 14px rgba(12, 10, 8, 0.8);
       }
 
       main {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        text-align: center;
-        padding: 3rem 0;
+        text-align: left;
+        max-width: 38rem;
+        padding: 3rem 1.5rem 3rem 0;
+        background: radial-gradient(ellipse 90% 75% at 12% 48%, rgba(12, 10, 8, 0.5), transparent 72%);
       }
 
       .eyebrow {
@@ -114,16 +131,18 @@
         text-transform: uppercase;
         color: var(--gold-deep);
         margin-bottom: 1.5rem;
+        text-shadow: 0 2px 16px rgba(12, 10, 8, 0.8);
       }
 
       h1 {
         font-family: "Cormorant Garamond", Georgia, serif;
         font-weight: 500;
-        font-size: clamp(3rem, 9vw, 7.5rem);
+        font-size: clamp(3rem, 8vw, 6.4rem);
         line-height: 0.92;
         letter-spacing: -0.02em;
         max-width: 12ch;
         color: var(--ink);
+        text-shadow: 0 8px 36px rgba(12, 10, 8, 0.55);
       }
 
       h1 em {
@@ -136,16 +155,17 @@
         width: 3.5rem;
         height: 1px;
         background: var(--gold-deep);
-        margin: 2rem auto;
-        opacity: 0.8;
+        margin: 2rem 0;
+        opacity: 0.85;
       }
 
       .lede {
-        max-width: 34rem;
+        max-width: 32rem;
         color: var(--muted);
         font-size: clamp(1rem, 2vw, 1.15rem);
         font-weight: 300;
         line-height: 1.7;
+        text-shadow: 0 2px 18px rgba(12, 10, 8, 0.75);
       }
 
       .status {
@@ -160,6 +180,8 @@
         font-size: 0.72rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
+        background: rgba(12, 10, 8, 0.55);
+        backdrop-filter: blur(10px);
       }
 
       .dot {
@@ -190,6 +212,32 @@
         }
       }
 
+      @media (max-width: 800px) {
+        .atmosphere {
+          background-position: 68% 22%;
+        }
+
+        .atmosphere::before {
+          background: linear-gradient(
+            180deg,
+            rgba(12, 10, 8, 0.72) 0%,
+            rgba(12, 10, 8, 0.46) 38%,
+            rgba(12, 10, 8, 0.62) 100%
+          );
+        }
+
+        main {
+          align-items: center;
+          text-align: center;
+          max-width: none;
+        }
+
+        .rule {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .dot {
           animation: none;
@@ -198,7 +246,7 @@
     </style>
   </head>
   <body>
-    <div class="atmosphere" aria-hidden="true"></div>
+    <div class="atmosphere" role="img" aria-label="Beauty editorial portrait with smoky eye makeup"></div>
     <div class="frame">
       <header>
         <div class="wordmark">BeautyMaxx</div>
