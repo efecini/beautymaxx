@@ -284,13 +284,21 @@
           left: 50%;
           transform: translate(-50%, -50%);
           max-width: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          white-space: normal;
+        }
+
+        .intro h1 .line {
+          display: block;
         }
 
         .intro h1,
         .intro h1 em {
           color: var(--muted);
           text-shadow: 0 2px 14px rgba(12, 10, 8, 0.8);
-          white-space: nowrap;
         }
       }
 
@@ -310,7 +318,7 @@
       <main>
         <div class="intro">
           <div class="wordmark">BeautyMaxx</div>
-          <h1>Beauty, taken <em>further.</em></h1>
+          <h1><span class="line">Beauty,</span> <span class="line">taken <em>further.</em></span></h1>
         </div>
         <div class="cta">
           <p class="status"><span class="dot" aria-hidden="true"></span> Coming soon</p>
